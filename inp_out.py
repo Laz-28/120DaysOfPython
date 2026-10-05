@@ -29,3 +29,26 @@ print(min(4, 9, 2))       # 2
 print(max(4, 9, 2))       # 9
 
 
+#Simple interest principle
+
+principal = float(input("Enter the principal amount: "))
+rate =  float(input("Enter the rate: "))
+time = float(input("Enter the time in years: "))
+
+interest = (principal*rate*time)/100
+
+total = principal + interest
+
+print(f"Interest is {interest}")
+print(f"Total amount is {total}")
+print(f"Monthly interset is {(interest/(time * 12))}")
+
+#BMI calculator
+name = input("Enter your name: ")
+weight = float(input("Enter your weight in kg: "))
+height = float(input("Enter your height in meters: "))
+
+bmi = weight/(height**2)
+
+print(f"\n{name}, your bmi is {round(bmi, 1)}")
+print("Healthy range:", 18.5 <= bmi <= 24.9)
