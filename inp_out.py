@@ -22,5 +22,10 @@ elif age > 20:
 else:
     print("Invalid")
 
+##Bilt in functions
+print(round(3.14159, 3))    # 3.14
+print(abs(-7))       # 7
+print(min(4, 9, 2))       # 2
+print(max(4, 9, 2))       # 9
 
 
