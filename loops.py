@@ -51,4 +51,13 @@ for i in range(1,11):
     total += i
 
 print(total)
+
+##Multiplicatioin table
     
+number = int(input("Which table do you want? "))
+
+print(f"\nMultiplication table of {number}")
+print("-" * 25)
+
+for i in range(1, 13):
+    print(f"{number} x {i:2} = {number * i:3}")
