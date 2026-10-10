@@ -61,3 +61,23 @@ print("-" * 25)
 
 for i in range(1, 13):
     print(f"{number} x {i:2} = {number * i:3}")
+
+##Numbers guessing game
+import random
+
+secret = random.randint(1, 100)
+attempts = 0
+
+print("I'm thinking of a number between 1 and 100.")
+
+while True:
+    guess = int(input("Your guess: "))
+    attempts += 1
+
+    if guess < secret:
+        print("Too low!")
+    elif guess > secret:
+        print("Too high!")
+    else:
+        print(f"Correct! You got it in {attempts} attempts.")
+        break
