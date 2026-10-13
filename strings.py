@@ -19,3 +19,47 @@ if cleaned == cleaned[::-1]:
     print(f'"{text}" is a palindrome')
 else:
     print(f'"{text}" is not a palindrome')
+
+#Password signal strength
+password = input("Enter a password: ")
+
+has_upper = False
+has_lower = False
+has_digit = False
+has_symbol = False
+
+for ch in password:
+    if ch.isupper():
+        has_upper = True
+    elif ch.islower():
+        has_lower = True
+    elif ch.isdigit():
+        has_digit = True
+    else:
+        has_symbol = True
+
+score = 0
+if len(password) >= 8:
+    score += 1
+if has_upper:
+    score += 1
+if has_lower:
+    score += 1
+if has_digit:
+    score += 1
+if has_symbol:
+    score += 1
+
+print(f"\nScore: {score}/5")
+
+if score <= 2:
+    print("Strength: Weak")
+elif score <= 4:
+    print("Strength: Medium")
+else:
+    print("Strength: Strong")
+
+if len(password) < 8:
+    print("Tip: use at least 8 characters")
+if not has_symbol:
+    print("Tip: add a symbol like ! @ # $")
