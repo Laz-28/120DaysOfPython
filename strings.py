@@ -96,3 +96,20 @@ s.swapcase()     # "HELLO wORLD"
 "a,b,c".split(",")            # ["a", "b", "c"]
 "one two three".split()       # ["one", "two", "three"]
 "-".join(["a", "b", "c"])     # "a-b-c"
+
+##f-string formating
+price = 1234.5678
+print(f"{price:.2f}")        # 1234.57 (2 decimals)
+print(f"{price:,.2f}")       # 1,234.57 (thousands separator)
+print(f"{'Hi':>10}")         # right-align in 10 spaces
+print(f"{'Hi':<10}|")        # left-align
+print(f"{'Hi':^10}|")        # center
+
+##Checking what's inside
+"abc".isalpha()       # True (letters only)
+"123".isdigit()       # True (digits only)
+"abc123".isalnum()    # True (letters or digits)
+"   ".isspace()       # True
+"abc".islower()       # True
+"ABC".isupper()       # True
+
