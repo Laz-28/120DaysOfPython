@@ -69,3 +69,30 @@ word = "python"
 print(word[0:3])
 print(word[0::2])
 print(word[::-1])
+
+##Useful operations
+
+print(len("Python"))
+print("th" in "Python")
+
+##String methods
+s = "hello World"
+s.upper()        # "HELLO WORLD"
+s.lower()        # "hello world"
+s.title()        # "Hello World"
+s.capitalize()   # "Hello world"
+s.swapcase()     # "HELLO wORLD"
+
+##Cleaning and search
+" hi ".strip()
+"hello".replace("l", "L")
+"hello".find("l")
+"hello".count("l")
+"hello".startswith("he")
+"hello".endswith("lo")
+
+##Splitting and joining
+
+"a,b,c".split(",")            # ["a", "b", "c"]
+"one two three".split()       # ["one", "two", "three"]
+"-".join(["a", "b", "c"])     # "a-b-c"
