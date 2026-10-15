@@ -63,3 +63,9 @@ if len(password) < 8:
     print("Tip: use at least 8 characters")
 if not has_symbol:
     print("Tip: add a symbol like ! @ # $")
+
+##Slicing strings[start:stop:step]
+word = "python"
+print(word[0:3])
+print(word[0::2])
+print(word[::-1])
