@@ -26,3 +26,42 @@ del fruits[0]                  # delete by index
 fruits.clear()                 # empty the list
 
 print(fruits)
+
+#Searching and counting
+nums = [5, 3, 8, 3, 1]
+
+print(3 in nums)          # True
+print(nums.index(8))      # 2 (position of first match)
+print(nums.count(3))      # 2
+
+#Sorting and reversing
+nums = [5, 3, 8, 1]
+
+nums.sort()                    # sorts in place: [1, 3, 5, 8]
+nums.sort(reverse=True)        # [8, 5, 3, 1]
+nums.reverse()                 # flips the order in place
+
+sorted_nums = sorted(nums)     # returns a NEW sorted list, original unchanged
+
+
+#Built ins
+nums = [4, 9, 2, 7]
+
+print(len(nums))     # 4
+print(sum(nums))     # 22
+print(min(nums))     # 2
+print(max(nums))     # 9
+
+
+##Looping through lists
+colors = ["red", "green", "blue"]
+
+for color in colors:
+    print(color)
+
+# Need the index too? Use enumerate()
+for i, color in enumerate(colors):
+    print(i, color)             # 0 red, 1 green, 2 blue
+
+for i, color in enumerate(colors, start=1):
+    print(f"{i}. {color}")      # 1. red, 2. green, 3. blue
