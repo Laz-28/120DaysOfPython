@@ -65,3 +65,52 @@ for i, color in enumerate(colors):
 
 for i, color in enumerate(colors, start=1):
     print(f"{i}. {color}")      # 1. red, 2. green, 3. blue
+
+##Copying lists
+a = [1, 2, 3]
+b = a            # NOT a copy! Both names point to the same list
+b.append(4)
+print(a)         # [1, 2, 3, 4]  (a changed too!)
+
+c = a.copy()     # a real copy (or a[:])
+c.append(5)
+print(a)         # [1, 2, 3, 4]  (unchanged)
+
+##Nested lists
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrix[1][2])       # 6 (row 1, column 2)
+
+for row in matrix:
+    for value in row:
+        print(value, end=" ")
+    print()
+
+##Converting between stings and lists
+list("abc")                    # ['a', 'b', 'c']
+"a b c".split()                # ['a', 'b', 'c']
+" ".join(["a", "b", "c"])      # "a b c"
+
+##Tuples
+#A tuple is like a list but immutable (can’t be changed after creation). Use it for data that shouldn’t change.
+point = (3, 5)
+colors = ("red", "green", "blue")
+single = (5,)                  # note the comma for a one-item tuple
+
+print(point[0])                # 3
+print(len(colors))             # 3
+# point[0] = 10                # TypeError!
+
+
+x, y = point
+print(x, y)                    # 3 5
+
+name, age, city = ("Amina", 25, "Nairobi")
+
+# Swap two variables
+a, b = 1, 2
+a, b = b, a                    # now a=2, b=1
