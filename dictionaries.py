@@ -49,3 +49,31 @@ prices.items()     # dict_items([('apple', 50), ...])
 list(prices.keys())            # convert to a normal list
 sorted(prices)                 # sorted keys
 sorted(prices.items(), key=lambda item: item[1])   # sort by value (lambda is Lesson 12)
+
+##Nested dictionaries and lists in dictionaries
+
+students = {
+    "amina":{"age":20,"scores": [85,90,78]},
+    "brian":{"age":22,"scores":[70,65,88]}
+}
+
+print(students["amina"]["age"])
+print(students["brian"]["scores"][0])
+
+students["cate"] = {"age":21, "scores":[]}
+students["cate"]["scores"].append(95)
+
+##Counting pattern
+text = "banana"
+counts = {}
+
+for ch in text:
+    if ch in counts:
+        counts[ch] += 1
+    else:
+        counts[ch] = 1
+
+print(counts)
+
+
+
