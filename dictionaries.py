@@ -75,5 +75,11 @@ for ch in text:
 
 print(counts)
 
+##Sets  - removing duplicates
+numbers = {1, 2, 3, 3, 2}
+print(numbers)                   # {1, 2, 3} (duplicates gone)
+
+empty_set = set()                # NOT {} (that makes an empty dictionary)
+letters = set("hello")           # {'h', 'e', 'l', 'o'}
 
 
