@@ -82,4 +82,24 @@ print(numbers)                   # {1, 2, 3} (duplicates gone)
 empty_set = set()                # NOT {} (that makes an empty dictionary)
 letters = set("hello")           # {'h', 'e', 'l', 'o'}
 
+##Adding and removing sets
+
+numbers.add(20)
+numbers.remove(2)
+numbers.discard(1)
+
+##Set operations
+
+a = {1,2,3,4}
+b = {3,4,5,6}
+
+print(a|b) # {1, 2, 3, 4, 5, 6}  union (everything)
+print(a & b)     # {3, 4}              intersection (in both)
+print(a - b)     # {1, 2}              difference (in a, not b)
+print(a ^ b)     # {1, 2, 5, 6}        symmetric difference (in one, not both)
+print(3 in a)    # True
+
+#Remove dupluicates from a list
+nums = [1, 2, 2, 3, 3, 3]
+unique = list(set(nums))         # order is not guaranteed
 
