@@ -55,3 +55,10 @@ my_list = ["a"]
 add_item(my_list)
 print(my_list)                 # ['a', 'new']
 
+##The main pattern
+
+def main():
+    print("Program starts here")
+
+if __name__ == "__main__":
+    main()
