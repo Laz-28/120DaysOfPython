@@ -29,3 +29,29 @@ def show(**info):
         print(f"{key} : {value}")
 
 show(name="Farhiya", age = 21)
+
+##Docstrings
+
+def area(length, width):
+    """Return the area of a rectangle."""
+    return length * width
+
+help(area)             # shows the docstring
+
+##Functions calling functions
+def square(n):
+    return n*n
+
+def sum_of_squares(a,b):
+    return square(a)+square(b)
+
+print(sum_of_squares(23,24))
+
+##Passing lists
+def add_item(items):
+    items.append("new")        # changes the ORIGINAL list
+
+my_list = ["a"]
+add_item(my_list)
+print(my_list)                 # ['a', 'new']
+
