@@ -41,3 +41,16 @@ print(my_list)
 
 
 
+#Date time
+from datetime import datetime, date, timedelta
+
+now = datetime.now()
+print(now)                                  # 2026-10-28 14:30:12.123456
+print(now.strftime("%d/%m/%Y %H:%M"))       # 28/10/2026 14:30
+print(now.year, now.month, now.day)
+
+today = date.today()
+next_week = today + timedelta(days=7)
+
+birthday = datetime.strptime("2000-05-14", "%Y-%m-%d")   # string → datetime
+age_days = (now - birthday).days
