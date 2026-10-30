@@ -54,3 +54,32 @@ next_week = today + timedelta(days=7)
 
 birthday = datetime.strptime("2000-05-14", "%Y-%m-%d")   # string → datetime
 age_days = (now - birthday).days
+
+##time
+import time
+
+print("Wait...")
+time.sleep(2)              # pause for 2 seconds
+print("Done")
+
+start = time.time()
+# ... some code ...
+print(f"Took {time.time() - start:.2f} seconds")
+
+##Or
+timestamp = time.time()
+print(time.ctime(timestamp))
+print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp)))
+
+##os and sys
+import os
+import sys
+
+os.getcwd()                    # current folder
+os.listdir(".")                # files in a folder
+os.path.exists("data.txt")     # does a file exist?
+os.path.join("folder", "file.txt")   # build paths safely
+
+sys.argv                       # command-line arguments
+sys.exit()                     # stop the program
+
