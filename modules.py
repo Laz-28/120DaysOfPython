@@ -83,3 +83,17 @@ os.path.join("folder", "file.txt")   # build paths safely
 sys.argv                       # command-line arguments
 sys.exit()                     # stop the program
 
+#Strings
+import string
+
+string.ascii_letters       # 'abc...XYZ'
+string.digits              # '0123456789'
+string.punctuation         # '!"#$%&...'
+
+#Collection
+from collections import Counter
+
+Counter("banana")                   # Counter({'a': 3, 'n': 2, 'b': 1})
+Counter([1, 1, 2]).most_common(1)   # [(1, 2)]
+
+
