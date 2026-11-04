@@ -25,4 +25,14 @@ with open("notes.txt", "a") as f:
     print("Line 4", file=f)
 
 
+##Reading 
+with open("notes.txt", "r") as f:
+    content = f.read()              # whole file as one string
+
+with open("notes.txt") as f:
+    lines = f.readlines()           # list of lines (with \n)
+
+with open("notes.txt") as f:
+    first = f.readline()            # one line at a time
+
 
