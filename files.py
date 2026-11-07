@@ -76,3 +76,20 @@ open(r"C:\Users\Amina\notes.txt")       # absolute path (r"" avoids backslash tr
 with open("notes.txt", "w", encoding="utf-8") as f:
     f.write("Habari ya asubuhi ☀️")
 
+##CSV files
+import csv
+
+rows = [
+    ["name", "age", "city"],
+    ["Amina", 25, "Nairobi"],
+    ["Brian", 30, "Mombasa"],
+]
+
+with open("people.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerows(rows)
+
+with open("people.csv", newline="", encoding="utf-8") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)                  # ['Amina', '25', 'Nairobi']
