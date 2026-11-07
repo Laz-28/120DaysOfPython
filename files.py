@@ -36,3 +36,43 @@ with open("notes.txt") as f:
     first = f.readline()            # one line at a time
 
 
+with open("notes.txt") as f:
+    for line in f:
+        print(line.strip())         # strip() removes the trailing \n
+
+with open("notes.txt") as f:
+    lines = f.read().splitlines()  ##Lines in a list
+
+print(lines)
+
+
+##Checking if a file exists
+import os
+
+if os.path.exists("/home/otieno-lazaro/words.txt"):
+    print("Found it")
+
+else:
+    print("file not found")
+    
+
+##Modern alternative
+
+from pathlib import Path
+
+path = Path("/home/otieno-lazaro/words.txt")
+print(path.exists())
+print(path.read_text())
+path.write_text("Hello")
+
+##File paths
+
+open("notes.txt")                       # same folder as where you RUN the program
+open("data/notes.txt")                  # subfolder
+open(r"C:\Users\Amina\notes.txt")       # absolute path (r"" avoids backslash trouble)
+
+
+##Encoding
+with open("notes.txt", "w", encoding="utf-8") as f:
+    f.write("Habari ya asubuhi ☀️")
+
