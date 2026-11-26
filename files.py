@@ -47,9 +47,13 @@ print(lines)
 
 
 ##Checking if a file exists
-import os
+from pathlib import Path
 
-if os.path.exists("/home/otieno-lazaro/words.txt"):
+# Linux: uncomment this and comment out the next line when running on Linux.
+# path = Path("/home/otieno-lazaro/words.txt")
+path = Path(__file__).with_name("words.txt")
+
+if path.exists():
     print("Found it")
 
 else:
@@ -58,18 +62,15 @@ else:
 
 ##Modern alternative
 
-from pathlib import Path
-
-path = Path("/home/otieno-lazaro/words.txt")
 print(path.exists())
-print(path.read_text())
-path.write_text("Hello")
+path.write_text("Hello", encoding="utf-8")
+print(path.read_text(encoding="utf-8"))
 
 ##File paths
 
-open("notes.txt")                       # same folder as where you RUN the program
-open("data/notes.txt")                  # subfolder
-open(r"C:\Users\Amina\notes.txt")       # absolute path (r"" avoids backslash trouble)
+# open("notes.txt")                       # same folder as where you RUN the program
+# open("data/notes.txt")                  # subfolder
+# open(r"C:\Users\Amina\notes.txt")       # absolute path (r"" avoids backslash trouble)
 
 
 ##Encoding
@@ -89,7 +90,20 @@ with open("people.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f)
     writer.writerows(rows)
 
+# with open("people.csv", newline="", encoding="utf-8") as f:
+#     reader = csv.reader(f)
+#     for row in reader:
+#         print(row)                  # ['Amina', '25', 'Nairobi']
+
+with open("people2.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=["name", "age"])
+    writer.writeheader()
+    person = {"name": "Cate", "age": 22}
+    writer.writerow(person)
+    print(person["name"], person["age"])
+
+
 with open("people.csv", newline="", encoding="utf-8") as f:
-    reader = csv.reader(f)
-    for row in reader:
-        print(row)                  # ['Amina', '25', 'Nairobi']
+    for row in csv.DictReader(f):
+        print(row["name"], row["city"])      # values are always strings!
+
